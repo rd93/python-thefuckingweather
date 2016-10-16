@@ -85,7 +85,7 @@ def get_weather(location=False, celsius=False):
     # Fetch HTML
     url = "http://www.thefuckingweather.com/?" + query_string
     data = urllib2.urlopen(url).read()
-    soup = BeautifulSoup(data)
+    soup = BeautifulSoup(data,'lxml')
 
     # Check for an error report
     large = soup.find("p", {"class": "large"})
